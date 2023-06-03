@@ -23,6 +23,13 @@ $ chmod +x epinio
 $ mv epinio /usr/local/bin
 
 ```
+
+---
+### Epinio Approach
+---
+
+<image src="https://github.com/epinio/epinio/raw/main/docs/explanations/architecture/containers.png" height="700" width="800" >
+
 ---
 
 **2) Install epinio**
@@ -53,7 +60,13 @@ $ epinio push --name kw-mvn --path .
 ```
 
 ---
+### Acorn Approach
+---
 
+<image src="https://docs.acorn.io/assets/images/acorn.workflow-0fc70d0200340a9d8adf7c9a983616ab.png" >
+---
+<image src="https://docs.acorn.io/assets/images/architecture.drawio-31f08511392eb87fe3ca1e8c41706d76.svg" >
+---
 **3) Install Acorn**
 
 ```bash
