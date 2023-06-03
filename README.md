@@ -48,14 +48,47 @@ $ epinio login https://epinio.10.214.156.38.nip.io
 **3) Run epinio application**
 
 ```bash
-$ git clone https://github.com/epinio/epinio.git
-$ epinio push --name golang-sample-app --path .
+$ git clone https://github.com/flytux/kw-mvn.git
+$ epinio push --name kw-mvn --path .
 ```
 
 ---
 
-- Epinio
-- Acorn
-- what else?
+**3) Install Acorn**
+
+```bash
+$ curl -LO https://cdn.acrn.io/cli/default_linux_amd64_v1/acorn
+$ sudo mv acorn /usr/local/bin
+$ acorn install
+```
+---
+
+**4) Deploy Acorn App**
+```bash
+$ cat << EOF >> Dockerfile
+# syntax=docker/dockerfile:1
+FROM eclipse-temurin:17-jdk-jammy
+WORKDIR /app
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:resolve
+COPY src ./src
+CMD ["./mvnw", "spring-boot:run"]
+EOF
+
+$ cat << EOF >> Acornfile
+containers: {
+  app: {
+    build: "."
+    ports: publish: "8080/http"
+  }
+}
+EOF
+
+$ acorn run .
+```
+- http://app-red-silence-71c1623a.528l52.alpha.on-acorn.io
+
+---
 
 - Crossplane for controlling cloud infrastuctures from my k8s cluster
