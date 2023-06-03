@@ -34,7 +34,7 @@ $ helm repo add epinio https://epinio.github.io/helm-charts
 $ helm repo update
 $ LB_IP=$(kubectl get svc -n kube-system traefik -o jsonpath={@.status.loadBalancer.ingress} | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 $ echo $LB_IP
-$ helm upgrade --install epinio epinio/epinio --namespace epinio --create-namespace \\n    --set global.domain=$LB_IP.nip.io
+$ helm upgrade --install epinio epinio/epinio --namespace epinio --create-namespace  --set global.domain=$LB_IP.nip.io
 
 # Epinio에 로그인 합니다.
 $ epinio login https://epinio.10.214.156.38.nip.io
