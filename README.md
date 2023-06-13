@@ -56,6 +56,7 @@ $ epinio login https://epinio.10.214.156.38.nip.io
 
 ```bash
 $ git clone https://github.com/flytux/kw-mvn.git
+$ cd kw-mvn
 $ epinio push --name kw-mvn --path .
 ```
 
@@ -63,10 +64,13 @@ $ epinio push --name kw-mvn --path .
 ### Acorn Approach
 ---
 
-<image src="https://docs.acorn.io/assets/images/acorn.workflow-0fc70d0200340a9d8adf7c9a983616ab.png" >
+<image src="https://docs.acorn.io/assets/images/acorn.workflow-0fc70d0200340a9d8adf7c9a983616ab.png">
+
+
+<image src="https://docs.acorn.io/assets/images/architecture.drawio-31f08511392eb87fe3ca1e8c41706d76.svg">
+
 ---
-<image src="https://docs.acorn.io/assets/images/architecture.drawio-31f08511392eb87fe3ca1e8c41706d76.svg" >
----
+
 **3) Install Acorn**
 
 ```bash
